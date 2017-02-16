@@ -2,13 +2,15 @@ import { browser, element, by, By, $, $$, ExpectedConditions } from 'protractor'
 
 describe('Test the calculator application', () => {
 
+    let operator = element(by.model('operator'));
+    
     let firstInputfield = element(by.model('first'));
     let secondInputfield = element(by.model('second'));
-    let operatorAddition = element(by.model('operator')).element(by.css('[value="ADDITION"]'));
-    let operatorDivision = element(by.model('operator')).element(by.css('[value="DIVISION"]'));
-    let operatorMultiplication = element(by.model('operator')).element(by.css('[value="MULTIPLICATION"]'));
-    let operatorSubtraction = element(by.model('operator')).element(by.css('[value="SUBTRACTION"]'));
-    let operatorModulo = element(by.model('operator')).element(by.css('[value="MODULO"]'));
+    let operatorAddition = operator.element(by.css('[value="ADDITION"]'));
+    let operatorDivision = operator.element(by.css('[value="DIVISION"]'));
+    let operatorMultiplication = operator.element(by.css('[value="MULTIPLICATION"]'));
+    let operatorSubtraction = operator.element(by.css('[value="SUBTRACTION"]'));
+    let operatorModulo = operator.element(by.css('[value="MODULO"]'));
     let button = element(by.id('gobutton'));
     let latest = element(by.binding('latest'));
     let resultTimestampfirstRow = element(by.repeater('result in memory').row(0).column('result.timestamp'));
@@ -93,24 +95,6 @@ describe('Test the calculator application', () => {
         button.click();
         expect(latest.getText()).toEqual('20');
     });
-    // xit('should test the expression for the first line', () => {
-    //     element(by.model('first')).sendKeys('5');
-    //     element(by.model('operator')).element(by.css('[value="ADDITION"]')).click();
-    //     element(by.model('second')).sendKeys('3');
-    //     element(by.id('gobutton')).click();
-    //     element(by.cssContainingText('th', 'Expression')).getText().then((text) => {
-    //         console.log(text);
-    //     });
-    //     element(by.cssContainingText('.ng-binding', '5')).getText().then((text) => {
-    //         console.log(text);
-    //     });
-    //     element(by.cssContainingText('.ng-binding', '+')).getText().then((text) => {
-    //         console.log(text);
-    //     });
-    //     element(by.cssContainingText('.ng-binding', '3')).getText().then((text) => {
-    //         console.log(text);
-    //     });
-    // });
 
     it('should test values from  ngRepeat', () => {
         firstInputfield.sendKeys('5');
@@ -137,12 +121,5 @@ describe('Test the calculator application', () => {
         expect(resultOperatorsecondRow.getText()).toEqual('+');
         expect(resultsSecondsecondRow.getText()).toEqual('3');
         expect(resultValuesecondRow.getText()).toEqual('8');
-
-        // element(by.repeater('result in memory').row(0).column('result.first')).getText().then(function (args) {
-        //     console.log(args);
-        // });
-        // element.all(by.repeater('result in memory').column('result.first')).getText().then(function (args) {
-        //     console.log(args);
-        // });
     });
 });
