@@ -1,13 +1,14 @@
 "use strict";
 var protractor_1 = require("protractor");
 describe('Test the calculator application', function () {
+    var operator = protractor_1.element(protractor_1.by.model('operator'));
     var firstInputfield = protractor_1.element(protractor_1.by.model('first'));
     var secondInputfield = protractor_1.element(protractor_1.by.model('second'));
-    var operatorAddition = protractor_1.element(protractor_1.by.model('operator')).element(protractor_1.by.css('[value="ADDITION"]'));
-    var operatorDivision = protractor_1.element(protractor_1.by.model('operator')).element(protractor_1.by.css('[value="DIVISION"]'));
-    var operatorMultiplication = protractor_1.element(protractor_1.by.model('operator')).element(protractor_1.by.css('[value="MULTIPLICATION"]'));
-    var operatorSubtraction = protractor_1.element(protractor_1.by.model('operator')).element(protractor_1.by.css('[value="SUBTRACTION"]'));
-    var operatorModulo = protractor_1.element(protractor_1.by.model('operator')).element(protractor_1.by.css('[value="MODULO"]'));
+    var operatorAddition = operator.element(protractor_1.by.css('[value="ADDITION"]'));
+    var operatorDivision = operator.element(protractor_1.by.css('[value="DIVISION"]'));
+    var operatorMultiplication = operator.element(protractor_1.by.css('[value="MULTIPLICATION"]'));
+    var operatorSubtraction = operator.element(protractor_1.by.css('[value="SUBTRACTION"]'));
+    var operatorModulo = operator.element(protractor_1.by.css('[value="MODULO"]'));
     var button = protractor_1.element(protractor_1.by.id('gobutton'));
     var latest = protractor_1.element(protractor_1.by.binding('latest'));
     var resultTimestampfirstRow = protractor_1.element(protractor_1.by.repeater('result in memory').row(0).column('result.timestamp'));
@@ -84,24 +85,6 @@ describe('Test the calculator application', function () {
         button.click();
         expect(latest.getText()).toEqual('20');
     });
-    // xit('should test the expression for the first line', () => {
-    //     element(by.model('first')).sendKeys('5');
-    //     element(by.model('operator')).element(by.css('[value="ADDITION"]')).click();
-    //     element(by.model('second')).sendKeys('3');
-    //     element(by.id('gobutton')).click();
-    //     element(by.cssContainingText('th', 'Expression')).getText().then((text) => {
-    //         console.log(text);
-    //     });
-    //     element(by.cssContainingText('.ng-binding', '5')).getText().then((text) => {
-    //         console.log(text);
-    //     });
-    //     element(by.cssContainingText('.ng-binding', '+')).getText().then((text) => {
-    //         console.log(text);
-    //     });
-    //     element(by.cssContainingText('.ng-binding', '3')).getText().then((text) => {
-    //         console.log(text);
-    //     });
-    // });
     it('should test values from  ngRepeat', function () {
         firstInputfield.sendKeys('5');
         operatorAddition.click();
@@ -127,11 +110,5 @@ describe('Test the calculator application', function () {
         expect(resultOperatorsecondRow.getText()).toEqual('+');
         expect(resultsSecondsecondRow.getText()).toEqual('3');
         expect(resultValuesecondRow.getText()).toEqual('8');
-        // element(by.repeater('result in memory').row(0).column('result.first')).getText().then(function (args) {
-        //     console.log(args);
-        // });
-        // element.all(by.repeater('result in memory').column('result.first')).getText().then(function (args) {
-        //     console.log(args);
-        // });
     });
 });
