@@ -12,6 +12,7 @@ exports.config = {
     specs: ['Test/**/*.spec.js'],
 
     // Run suites like for example: protractor conf.js --suite=smoke
+    // Run multiple suites like for example: protractor conf.js --suite=smoke,longRunning
     suites:{
         smoke: 'Test/smoke/*.spec.js',
     },
