@@ -11,6 +11,7 @@ exports.config = {
     // protractor is called.
     specs: ['Test/**/*.spec.js'],
 
+    // Run suites like for example: protractor conf.js --suite=smoke
     suites:{
         smoke: 'Test/smoke/*.spec.js',
     },
