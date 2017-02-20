@@ -38,74 +38,74 @@ describe('Test the protractor demo', () => {
 
         describe('When Using single calculations', () => {
             it('should add two numbers, use addition and check the result value of the first line', () => {
-                enterFirstFieldValue('5');
-                operatorAddition.click();
-                secondInputfield.sendKeys('3');
-                button.click();
-                expect(latest.getText()).toEqual('8');
+                CreatePage.enterFirstFieldValue('5');
+                CreatePage.chooseAddition();
+                CreatePage.enterSecondFieldValue('3');
+                CreatePage.clickGO();
+                expect(CreatePage.getLatest().toEqual('8'));
             });
             it('should add two numbers,use division and check the result value of the first line', () => {
-                firstInputfield.sendKeys('10');
-                operatorDivision.click();
-                secondInputfield.sendKeys('2');
-                button.click();
-                expect(latest.getText()).toEqual('5');
+                CreatePage.enterFirstFieldValue('10');
+                CreatePage.chooseDivision();
+                CreatePage.enterSecondFieldValue('2');
+                CreatePage.clickGO();
+                expect(CreatePage.getLatest().toEqual('5'));
             });
             it('should add two numbers,use multiplication and check the result value of the first line', () => {
-                firstInputfield.sendKeys('25');
-                operatorMultiplication.click();
-                secondInputfield.sendKeys('7');
-                button.click();
-                expect(latest.getText()).toEqual('175');
+                CreatePage.enterFirstFieldValue('25');
+                CreatePage.chooseMultiplication();
+                CreatePage.enterSecondFieldValue('7');
+                CreatePage.clickGO();
+                expect(CreatePage.getLatest().toEqual('125'));
             });
             it('should add two numbers,use subtraction and check the result value of the first line', () => {
-                firstInputfield.sendKeys('0');
-                operatorSubtraction.click();
-                secondInputfield.sendKeys('10');
-                button.click();
-                expect(latest.getText()).toEqual('-10');
+                CreatePage.enterFirstFieldValue('0');
+                CreatePage.chooseSubstraction();
+                CreatePage.enterSecondFieldValue('10');
+                CreatePage.clickGO();
+                expect(CreatePage.getLatest().toEqual('-10'));
             });
             it('should add two numbers,use modulo and check the result value of the first line', () => {
-                firstInputfield.sendKeys('5000');
-                operatorModulo.click();
-                secondInputfield.sendKeys('80');
-                button.click();
-                expect(latest.getText()).toEqual('40');
+                CreatePage.enterFirstFieldValue('5000');
+                CreatePage.chooseModulo();
+                CreatePage.enterSecondFieldValue('80');
+                CreatePage.clickGO();
+                expect(CreatePage.getLatest().toEqual('40'));
             });
         });
 
         describe('When using multiple calculations', () => {
             it('should do different operations in one session and check the result for the latest', () => {
-                firstInputfield.sendKeys('5');
-                operatorAddition.click();
-                secondInputfield.sendKeys('3');
-                button.click();
-                expect(latest.getText()).toEqual('8');
-                firstInputfield.sendKeys('10');
-                operatorDivision.click();
-                secondInputfield.sendKeys('2');
-                button.click();
-                expect(latest.getText()).toEqual('5');
-                firstInputfield.sendKeys('10');
-                operatorMultiplication.click();
-                secondInputfield.sendKeys('2');
-                button.click();
-                expect(latest.getText()).toEqual('20');
+                CreatePage.enterFirstFieldValue('5');
+                CreatePage.chooseAddition();
+                CreatePage.enterSecondFieldValue('3');
+                CreatePage.clickGO();
+                expect(CreatePage.getLatest().toEqual('8'));
+                CreatePage.enterFirstFieldValue('10');
+                CreatePage.chooseDivision();
+                CreatePage.enterSecondFieldValue('2');
+                CreatePage.clickGO();
+                expect(CreatePage.getLatest().toEqual('5'));
+                CreatePage.enterFirstFieldValue('10');
+                CreatePage.chooseMultiplication();
+                CreatePage.enterSecondFieldValue('2');
+                CreatePage.clickGO();
+                expect(CreatePage.getLatest().toEqual('20'));
             });
         });
 
 
         it('should test values from  ngRepeat', () => {
-            firstInputfield.sendKeys('5');
-            operatorAddition.click();
-            secondInputfield.sendKeys('3');
-            button.click();
-            expect(latest.getText()).toEqual('8');
-            firstInputfield.sendKeys('10');
-            operatorDivision.click();
-            secondInputfield.sendKeys('2');
-            button.click();
-            expect(latest.getText()).toEqual('5');
+            CreatePage.enterFirstFieldValue('5');
+            CreatePage.chooseAddition();
+            CreatePage.enterSecondFieldValue('3');
+            CreatePage.clickGO();
+            expect(CreatePage.getLatest().toEqual('8'));
+            CreatePage.enterFirstFieldValue('10');
+            CreatePage.chooseDivision();
+            CreatePage.enterSecondFieldValue('2');
+            CreatePage.clickGO();
+            expect(CreatePage.getLatest().toEqual('5'));
             resultTimestampfirstRow.getText().then((args) => {
                 console.log(args);
             });

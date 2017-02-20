@@ -14,6 +14,7 @@ var CreatePage = (function () {
         this.operatorSubtraction = this.operator.element(protractor_1.by.css('[value="SUBSTRACTION"]'));
         this.operatorModulo = this.operator.element(protractor_1.by.css('[value="MODULO"]'));
     }
+    ;
     CreatePage.prototype.clickGO = function () {
         this.button.click();
     };
@@ -29,11 +30,14 @@ var CreatePage = (function () {
     CreatePage.prototype.chooseAddition = function () {
         this.operatorAddition.click();
     };
-    CreatePage.prototype.chooseDivisionr = function () {
+    CreatePage.prototype.chooseDivision = function () {
         this.operatorDivision.click();
     };
     CreatePage.prototype.chooseMultiplication = function () {
         this.operatorMultiplication.click();
+    };
+    CreatePage.prototype.chooseSubstraction = function () {
+        this.operatorSubtraction.click();
     };
     CreatePage.prototype.chooseModulo = function () {
         this.operatorModulo.click();

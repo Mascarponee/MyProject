@@ -3,6 +3,9 @@ import { browser, element, by, By, $, $$, ExpectedConditions } from 'protractor'
 module.exports = new CreatePage;
 
 class CreatePage {
+
+    constructor(){};
+
     button = element(by.id('gobutton'));
     latest = element(by.binding('latest'));
     operator = element(by.model('operator'));
@@ -29,11 +32,14 @@ class CreatePage {
     chooseAddition(){
         this.operatorAddition.click();
     }
-    chooseDivisionr(){
+    chooseDivision(){
         this.operatorDivision.click();
     }
     chooseMultiplication(){
         this.operatorMultiplication.click();
+    }
+    chooseSubstraction(){
+        this.operatorSubtraction.click();
     }
     chooseModulo(){
         this.operatorModulo.click();
