@@ -28,7 +28,7 @@ describe('Test the protractor demo', function () {
     });
     describe('When testing the calculator', function () {
         describe('When Using single calculations', function () {
-            xit('should add two numbers, use addition and check the result value of the first line', function () {
+            it('should add two numbers, use addition and check the result value of the first line', function () {
                 CreatePage.enterFirstFieldValue('5');
                 CreatePage.chooseAddition();
                 CreatePage.enterSecondFieldValue('3');
@@ -83,7 +83,7 @@ describe('Test the protractor demo', function () {
                 expect(CreatePage.getLatest().toEqual('20'));
             });
         });
-        it('should test values from  ngRepeat', function () {
+        xit('should test values from  ngRepeat', function () {
             CreatePage.enterFirstFieldValue('5');
             CreatePage.chooseAddition();
             CreatePage.enterSecondFieldValue('3');

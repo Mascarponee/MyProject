@@ -37,7 +37,7 @@ describe('Test the protractor demo', () => {
     describe('When testing the calculator', () => {
 
         describe('When Using single calculations', () => {
-            xit('should add two numbers, use addition and check the result value of the first line', () => {
+            it('should add two numbers, use addition and check the result value of the first line', () => {
                 CreatePage.enterFirstFieldValue('5');
                 CreatePage.chooseAddition();
                 CreatePage.enterSecondFieldValue('3');
@@ -95,7 +95,7 @@ describe('Test the protractor demo', () => {
         });
 
 
-        it('should test values from  ngRepeat', () => {
+        xit('should test values from  ngRepeat', () => {
             CreatePage.enterFirstFieldValue('5');
             CreatePage.chooseAddition();
             CreatePage.enterSecondFieldValue('3');
