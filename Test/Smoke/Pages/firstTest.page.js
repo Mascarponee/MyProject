@@ -13,6 +13,7 @@ var CreatePage = (function () {
         this.operatorMultiplication = this.operator.element(protractor_1.by.css('[value="MULTIPLICATION"]'));
         this.operatorSubtraction = this.operator.element(protractor_1.by.css('[value="SUBSTRACTION"]'));
         this.operatorModulo = this.operator.element(protractor_1.by.css('[value="MODULO"]'));
+        this.repeaterElement = protractor_1.element;
     }
     ;
     CreatePage.prototype.clickGO = function () {
@@ -41,6 +42,9 @@ var CreatePage = (function () {
     };
     CreatePage.prototype.chooseModulo = function () {
         this.operatorModulo.click();
+    };
+    CreatePage.prototype.repeater = function (repeater, row, column) {
+        this.repeaterElement(protractor_1.by.repeater(repeater).row(row).column(column));
     };
     return CreatePage;
 }());

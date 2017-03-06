@@ -16,6 +16,7 @@ class CreatePage {
     operatorMultiplication = this.operator.element(by.css('[value="MULTIPLICATION"]'));
     operatorSubtraction = this.operator.element(by.css('[value="SUBSTRACTION"]'));
     operatorModulo = this.operator.element(by.css('[value="MODULO"]'));
+    repeaterElement = element;
 
     clickGO() {
         this.button.click();
@@ -43,5 +44,8 @@ class CreatePage {
     }
     chooseModulo(){
         this.operatorModulo.click();
+    }
+    repeater(repeater: string, row: number, column: string) {
+        this.repeaterElement(by.repeater(repeater).row(row).column(column));
     }
 };
