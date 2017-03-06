@@ -1,8 +1,6 @@
 import { browser, element, by, By, $, $$, ExpectedConditions } from 'protractor';
 
-module.exports = new CreatePage;
-
-class CreatePage {
+export class CreatePage {
 
     constructor(){};
 

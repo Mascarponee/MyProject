@@ -1,6 +1,5 @@
 "use strict";
 var protractor_1 = require("protractor");
-module.exports = new CreatePage;
 var CreatePage = (function () {
     function CreatePage() {
         this.button = protractor_1.element(protractor_1.by.id('gobutton'));
@@ -48,4 +47,5 @@ var CreatePage = (function () {
     };
     return CreatePage;
 }());
+exports.CreatePage = CreatePage;
 ;
