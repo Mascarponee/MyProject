@@ -1,5 +1,6 @@
 import { browser, element, by, By, $, $$, ExpectedConditions } from 'protractor';
 
+// class CreatePage {
 export class CreatePage {
 
     constructor(){};
@@ -47,3 +48,5 @@ export class CreatePage {
         this.repeaterElement(by.repeater(repeater).row(row).column(column));
     }
 };
+
+// export = CreatePage;
