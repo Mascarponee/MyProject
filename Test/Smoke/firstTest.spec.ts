@@ -1,5 +1,7 @@
 import { browser, element, by, By, $, $$, ExpectedConditions } from 'protractor';
+// import CreatePage = require('./Pages/firstTest.page.js');
 
+// var createPage: CreatePage = new CreatePage();
 var CreatePage = require('./Pages/firstTest.page.js');
 
 describe('Test the protractor demo', () => {
