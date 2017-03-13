@@ -1,9 +1,6 @@
 import { browser, element, by, By, $, $$, ExpectedConditions } from 'protractor';
 
-// class CreatePage {
-export class CreatePage {
-
-    constructor(){};
+class CreatePage {
 
     button = element(by.id('gobutton'));
     latest = element(by.binding('latest'));
@@ -13,9 +10,8 @@ export class CreatePage {
     operatorAddition = this.operator.element(by.css('[value="ADDITION"]'));
     operatorDivision = this.operator.element(by.css('[value="DIVISION"]'));
     operatorMultiplication = this.operator.element(by.css('[value="MULTIPLICATION"]'));
-    operatorSubtraction = this.operator.element(by.css('[value="SUBSTRACTION"]'));
+    operatorSubtraction = this.operator.element(by.css('[value="SUBTRACTION"]'));
     operatorModulo = this.operator.element(by.css('[value="MODULO"]'));
-    repeaterElement = element;
 
     clickGO() {
         this.button.click();
@@ -29,24 +25,24 @@ export class CreatePage {
     getLatest() {
         return this.latest.getText();
     }
-    chooseAddition(){
+    chooseAddition() {
         this.operatorAddition.click();
     }
-    chooseDivision(){
+    chooseDivision() {
         this.operatorDivision.click();
     }
-    chooseMultiplication(){
+    chooseMultiplication() {
         this.operatorMultiplication.click();
     }
-    chooseSubstraction(){
+    chooseSubstraction() {
         this.operatorSubtraction.click();
     }
-    chooseModulo(){
+    chooseModulo() {
         this.operatorModulo.click();
     }
-    repeater(repeater: string, row: number, column: string) {
-        this.repeaterElement(by.repeater(repeater).row(row).column(column));
+    getTextForRepeaterElement(repeater: string, row: number, column: string) {
+        return element(by.repeater(repeater).row(row).column(column)).getText();
     }
 };
 
-// export = CreatePage;
+export = CreatePage;

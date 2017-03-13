@@ -10,11 +10,9 @@ var CreatePage = (function () {
         this.operatorAddition = this.operator.element(protractor_1.by.css('[value="ADDITION"]'));
         this.operatorDivision = this.operator.element(protractor_1.by.css('[value="DIVISION"]'));
         this.operatorMultiplication = this.operator.element(protractor_1.by.css('[value="MULTIPLICATION"]'));
-        this.operatorSubtraction = this.operator.element(protractor_1.by.css('[value="SUBSTRACTION"]'));
+        this.operatorSubtraction = this.operator.element(protractor_1.by.css('[value="SUBTRACTION"]'));
         this.operatorModulo = this.operator.element(protractor_1.by.css('[value="MODULO"]'));
-        this.repeaterElement = protractor_1.element;
     }
-    ;
     CreatePage.prototype.clickGO = function () {
         this.button.click();
     };
@@ -42,10 +40,10 @@ var CreatePage = (function () {
     CreatePage.prototype.chooseModulo = function () {
         this.operatorModulo.click();
     };
-    CreatePage.prototype.repeater = function (repeater, row, column) {
-        this.repeaterElement(protractor_1.by.repeater(repeater).row(row).column(column));
+    CreatePage.prototype.getTextForRepeaterElement = function (repeater, row, column) {
+        return protractor_1.element(protractor_1.by.repeater(repeater).row(row).column(column)).getText();
     };
     return CreatePage;
 }());
-exports.CreatePage = CreatePage;
 ;
+module.exports = CreatePage;
