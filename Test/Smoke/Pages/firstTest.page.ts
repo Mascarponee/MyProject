@@ -1,6 +1,7 @@
 import { browser, element, by, By, $, $$, ExpectedConditions } from 'protractor';
 
 class CreatePage {
+    //url: string = browser.baseUrl + "#/parameterTuningFileImport";
 
     button = element(by.id('gobutton'));
     latest = element(by.binding('latest'));
@@ -12,6 +13,10 @@ class CreatePage {
     operatorMultiplication = this.operator.element(by.css('[value="MULTIPLICATION"]'));
     operatorSubtraction = this.operator.element(by.css('[value="SUBTRACTION"]'));
     operatorModulo = this.operator.element(by.css('[value="MODULO"]'));
+
+    //goTo(): void {
+        //browser.get(this.url);
+    //}
 
     clickGO() {
         this.button.click();
