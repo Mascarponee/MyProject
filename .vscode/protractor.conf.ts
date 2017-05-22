@@ -1,6 +1,9 @@
 import {Config} from 'protractor';
 
 export let config: Config = {
+
+  baseUrl: "https://www.wolframalpha.com/",
+
   directConnect: true,
 
   // Capabilities to be passed to the webdriver instance.
@@ -13,7 +16,7 @@ export let config: Config = {
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: ['firstTest_spec.js'],
+  specs: ['homePage.spec.ts'],
 
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {
@@ -31,5 +34,4 @@ export let config: Config = {
         //browser.driver.manage().window().maximize();
         // browser.driver.manage().window().setSize(1600, 1200);
   
-// baseUrl: "http://race-test/",
 };
