@@ -1,5 +1,6 @@
 "use strict";
 exports.config = {
+    baseUrl: "https://www.wolframalpha.com/",
     directConnect: true,
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
@@ -9,7 +10,7 @@ exports.config = {
     framework: 'jasmine',
     // Spec patterns are relative to the current working directory when
     // protractor is called.
-    specs: ['Test/**/*.spec.js'],
+    specs: ['Test/**/**/WolframAlpha.js'],
 
     // Run suites like for example: protractor conf.js --suite=smoke
     // Run multiple suites like for example: protractor conf.js --suite=smoke,longRunning

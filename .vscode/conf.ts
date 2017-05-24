@@ -16,7 +16,7 @@ export let config: Config = {
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: ['homePage.spec.ts'],
+  specs: ['WolframAlpha.js'],
 
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {
